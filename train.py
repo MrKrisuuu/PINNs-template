@@ -1,7 +1,6 @@
 import numpy as np
 from copy import deepcopy
 import torch
-from plotting import print_loss, plot_loss, plot_1D, plot_1D_in_2D, plot_compare, plot_difference
 
 
 def train_PINN(pinn, loss, epochs):
@@ -15,7 +14,7 @@ def train_PINN(pinn, loss, epochs):
 
 def train_model(nn_approximator, loss_fn, epochs):
     optimizer = torch.optim.Adam(nn_approximator.parameters())
-    #optimizer = torch.optim.LBFGS(nn_approximator.parameters())
+    # optimizer = torch.optim.LBFGS(nn_approximator.parameters())
     loss_values = []
     min_loss = 10000000000
     best_model = deepcopy(nn_approximator)

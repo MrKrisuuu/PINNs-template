@@ -13,7 +13,7 @@ class Loss:
     ):
         self.args = args
 
-        self.n_points = n_points//len(self.args)
+        self.n_points = round(n_points**(1/len(self.args)))
         self.weight_r = weight_r
         self.weight_b = weight_b
         self.weight_i = weight_i
