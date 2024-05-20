@@ -9,7 +9,9 @@ class Loss:
             n_points=1000,
             weight_r=1.0,
             weight_b=1.0,
-            weight_i=1.0
+            weight_i=1.0,
+
+            **kwargs
     ):
         self.args = args
 

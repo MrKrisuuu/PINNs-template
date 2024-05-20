@@ -5,7 +5,7 @@ import torch
 
 def train_PINN(pinn, loss, epochs):
     best_pinn, loss_values = train_model(pinn, loss, epochs=epochs)
-    best_pinn = best_pinn.cpu()
+    # best_pinn = best_pinn.cpu()
 
     #torch.save(best_pinn, "../results/SIR.pth")
 

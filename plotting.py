@@ -56,10 +56,10 @@ def plot_loss(loss_values, window=100, title="problem", save="loss"):
     plt.show()
 
 
-def plot_1D(pinn, t, ylabel="Values", labels=None, title="problem", save="plot"):
+def plot_1D(pinn, t, xlabel="Time", ylabel="Values", labels=None, title="problem", save="plot"):
     plt.plot(t.detach().cpu().numpy(), pinn(t).detach().cpu().numpy(), label=labels)
     plt.title(f"Result for {title} by PINN" )
-    plt.xlabel("Time")
+    plt.xlabel(xlabel)
     plt.ylabel(ylabel)
     if labels:
         plt.legend()
