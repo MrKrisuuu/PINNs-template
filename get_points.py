@@ -4,10 +4,16 @@ import torch
 def get_boundary_points(*args, n_points=15, device=torch.device("cpu"), requires_grad=True):
     if len(args) == 1:
         t_domain = args[0]
-        t_space = torch.linspace(t_domain[0], t_domain[1], n_points)
-        t_grid = t_space.reshape(-1, 1).to(device)
-        t_grid.requires_grad = requires_grad
-        return (t_grid, )
+
+        t0 = torch.linspace(t_domain[0], t_domain[0], 1)
+        t0 = t0.reshape(-1, 1).to(device)
+        t0.requires_grad = requires_grad
+
+        t1 = torch.linspace(t_domain[1], t_domain[1], 1)
+        t1 = t1.reshape(-1, 1).to(device)
+        t1.requires_grad = requires_grad
+
+        return (t0, t1)
     elif len(args) == 2:
         x_domain = args[0]
         t_domain = args[1]
